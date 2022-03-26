@@ -1,22 +1,26 @@
 import rospy
 import cv2
 from sensor_msgs.msg import Image
+from std_msgs.msg import String
 from cv_bridge import CvBridge, CvBridgeError
 
 bridge = CvBridge()
+command_pub = rospy.Publisher("motor_commands",String)
 
 def isWhite(val):
- return val > 120
+ return val > 100
 def plan(left, right):
-  print(left, right)
+
   threshold_val = 120
+  command = "STOP"
   if isWhite(left) and not isWhite(right):
-    print("LEFT")
-  if isWhite(right) and not isWhit(left):
-    print("RIGHT")
+    command = "LEFT"
+  if isWhite(right) and not isWhite(left):
+    command = "RIGHT"
   if isWhite(left) and isWhite(right):
-    print("GO")
-    
+    command = "GO"
+  print(left, right, command)
+  command_pub.publish(command)
 def imgCallback(data):
   try:
     cv_image = bridge.imgmsg_to_cv2(data,"bgr8")
@@ -28,7 +32,7 @@ def imgCallback(data):
     cv2.waitKey(3)
     
     
-    
+
     
   except CvBridgeError as e:
     print(e)
