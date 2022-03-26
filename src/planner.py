@@ -46,22 +46,26 @@ def imgCallback(data):
     l = 300
     r = 500
     gray_image = cv2.cvtColor(cv_image,cv2.COLOR_BGR2GRAY)
-    command = plan(gray_image[700][l], gray_image[700][r])
-    cv2.line(gray_image, (l,700), (r,700), 0 , 5)
+    command = plan(gray_image[650][l], gray_image[650][r])
     if command == "STOP":
       if r < 800 and l > 0:
         r = r+50
         l = l-50
-        command = plan(gray_image[700][r], gray_image[700][l])
-        cv2.line(gray_image, (l,700), (r,700), 0 , 5)
+        command = plan(gray_image[650][r], gray_image[650][l])
       else:
         command_pub.publish("BACK")
-        cv2.line(gray_image, (l,750), (r,750), 0 , 5)
 
         
     
-    
-    
+    gray_image = cv2.line(gray_image, (300,650), (500,650), 0 , 5)
+    if command == "RIGHT":
+      gray_image = cv2.circle(gray_image, (500, 650), 5, 255 ,2)    
+    if command == "LEFT":
+      gray_image = cv2.circle(gray_image, (300, 650), 5, 255 ,2)    
+    if command == "GO":
+      gray_image = cv2.circle(gray_image, (400, 650), 5, 255 ,2)
+    if command == "BACK":
+      gray_image = cv2.circle(gray_image, (400, 650), 5, 255 ,5)
     cv2.imshow("Raw Image", gray_image)
     cv2.waitKey(3)
     
