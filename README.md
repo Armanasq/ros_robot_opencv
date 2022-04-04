@@ -55,6 +55,17 @@ catkin build
 rosdep update
 ```
 
+## Build Packages
+You can build each package with
+
+```
+cd ~/catkin_ws
+
+catkin build Package_Name
+
+source devel/setup.bash
+```
+
 ## Updating Dependencies
 ```
 cd ~/catkin_ws/
