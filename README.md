@@ -86,7 +86,6 @@ source devel/setup.bash
 ```
 roslaunch ros_robot_opencv gazebo.launch 
 ```
-rosrun ros_robot_opencv motor_controller 
 
 
 ## Commands used during tutorial
@@ -103,4 +102,32 @@ Stop from spining
 ```
 rostopic pub /left_wheel_controller/command std_msgs/Float64 "data: 0.0" 
 
+```
+
+
+## Control motors
+You can edit motor_controller.cpp in ~/catkin_ws/ros_robot_opencv/src
+
+To start communication with robot's motors
+
+```
+rosrun ros_robot_opencv motor_controller
+
+```
+
+To control the robot's motors and send the commands to them
+
+```
+rostopic pub /motor_commands std_msgs/String "data: 'COMMANDS'" 
+
+```
+
+You can use the caommands which has been defiend in the motor_controller.cpp
+
+```
+GO
+STOP
+RIGHT
+LEFT
+BACK
 ```
