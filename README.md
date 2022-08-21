@@ -19,7 +19,7 @@ git clone https://github.com/Armanasq/ros_robot_opencv.git
 ## Other Repos
 - Some users may need to download the following repos to ensure the project run correctly.
 
-- Please note that some/many packages are not available for ROS Neotic so, to solve this problem you can clone each one and try to install them manually.
+- Please note that some/many packages are not available for ROS Noetic so, to solve this problem you can clone each one and try to install them manually.
 
 - To solve the above problem (E: Unable to locate package *** ) I recommend to use the following comand below
 
@@ -70,7 +70,7 @@ source devel/setup.bash
 ```
 cd ~/catkin_ws/
 rosdep update
-rosdep install --from-paths src --ignore-src -r -y --rosdistro neotic
+rosdep install --from-paths src --ignore-src -r -y --rosdistro noetic
 sudo apt-get update
 ```
 
