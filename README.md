@@ -26,7 +26,7 @@ git clone https://github.com/Armanasq/ros_robot_opencv.git
 ```
 cd ~/catkin_ws/src/
 
-git clone https://github.com/ros-perception/vision_opencv.git
+git clone -b noetic https://github.com/ros-perception/vision_opencv.git
 
 git clone https://github.com/ros-drivers/four_wheel_steering_msgs.git
 
