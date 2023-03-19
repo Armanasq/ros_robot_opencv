@@ -24,6 +24,8 @@ git clone https://github.com/Armanasq/ros_robot_opencv.git
 - To solve the above problem (E: Unable to locate package *** ) I recommend to use the following comand below
 
 ```
+sudo apt-get install libgeographic-dev 
+
 cd ~/catkin_ws/src/
 
 git clone -b noetic https://github.com/ros-perception/vision_opencv.git
@@ -36,11 +38,13 @@ git clone https://github.com/ros-drivers/video_stream_opencv.git
 
 git clone https://github.com/ros-visualization/interactive_marker_twist_server.git
 
-git clone https://github.com/cra-ros-pkg/robot_localization.git
+git clone -b noetic-devel https://github.com/cra-ros-pkg/robot_localization.git
 
 git clone https://github.com/ros-teleop/teleop_twist_joy.git
 
 git clone https://github.com/ros-teleop/twist_mux.git
+
+https://github.com/ros-geographic-info/geographic_info.git
 
 git clone https://github.com/ros-geographic-info/unique_identifier.git
 
@@ -49,6 +53,8 @@ git clone https://github.com/ros/common_msgs.git
 git clone https://github.com/ros-drivers/four_wheel_steering_msgs.git
 
 git clone https://github.com/ros-controls/ros_control.git
+
+git clone https://github.com/ros-controls/ros_controllers.git
 
 catkin build 
 
