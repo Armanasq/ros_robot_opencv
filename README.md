@@ -69,7 +69,7 @@ cd ~/catkin_ws
 
 catkin build Package_Name
 
-source devel/setup.bash
+source ~/catkin_ws/devel/setup.bash
 ```
 
 ## Updating Dependencies
